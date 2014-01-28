@@ -140,12 +140,11 @@ prefixDeclaration = bracketed "Prefix" $
                                       <*> ("=" .?> fullIRI)
 
 ontology :: Parser Ontology
-ontology = bracketed "Ontology" $
-           Ontology <$> versionedIRI
-                    <*> directlyImportsDocuments
-                    <*> ontologyAnnotations
-                    <*> axioms
-
+ontology = "Ontology" .?> ("(" .?> (Ontology <$> versionedIRI
+                                             <*> directlyImportsDocuments
+                                             <*> ontologyAnnotations
+                                             <*> axioms)
+                               <?. ")")
   where versionedIRI :: Parser (Maybe VersionedIRI)
         versionedIRI = option Nothing $
                        Just <$> (VersionedIRI <$> iri
