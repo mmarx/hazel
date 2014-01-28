@@ -13,6 +13,7 @@ library
   ghc-options:       -Wall -Werror -O2
   ghc-prof-options:  -auto-all -caf-all
   exposed-modules:     Hazel.Completion
+                     , Hazel.Conversion
                      , Hazel.Core
                      , Hazel.Normalize
                      , Hazel.Parser
@@ -40,6 +41,7 @@ executable hazel
   hs-source-dirs:    cli
   main-is:           Main.hs
   build-depends:     base >=4.5.0 && <4.7
+                   , containers ==0.5.*
                    , directory ==1.2.*
                    , hazel
 
