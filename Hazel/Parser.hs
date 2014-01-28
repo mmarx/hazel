@@ -15,10 +15,7 @@ module Hazel.Parser ( ontologyDocument
                     , module Hazel.Parser.OWL.AST
                     ) where
 
-#if !MIN_VERSION_base(4,6,0)
 import Prelude hiding (catch)
-  -- no Prelude.catch in base >=4.6
-#endif
 
 import Hazel.Parser.OWL.AST
 import Hazel.Parser.OWL.Functional (ontologyDocument)
