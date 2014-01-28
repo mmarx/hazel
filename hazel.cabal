@@ -32,7 +32,7 @@ library
                      , attoparsec ==0.11.*
                      , conduit ==1.0.*
                      , attoparsec-conduit ==1.0.*
-
+                     , unordered-containers ==0.2.*
 
 executable hazel
   default-language:  Haskell2010
